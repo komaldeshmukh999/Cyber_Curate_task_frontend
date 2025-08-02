@@ -1,0 +1,139 @@
+
+
+.profile-page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.left-div, .right-div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop layout */
+.left-div {
+  flex: 1 1 30%;
+}
+
+.right-div {
+  flex: 1 1 68%;
+}
+
+/* Profile Image */
+.image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+/* Centered Name and Icons */
+.name {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Contact Details */
+.contact-details div,
+.manager-details {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 14px;
+  /* background-color: white; */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manager-details img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+/* Section Headings */
+.general-information h2,
+.related-information h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+td {
+  padding: 10px 5px;
+  vertical-align: top;
+}
+
+td:first-child {
+  font-weight: bold;
+  width: 40%;
+  color: #555;
+}
+
+td:last-child {
+  color: #222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-page {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .left-div,
+  .right-div {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  .image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  t
+    td {
+  padding: 10px 5px;
+  vertical-align: top;
+}
+  
+
+  td:first-child {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  td:last-child {
+    margin-bottom: 10px;
+  }
+
+  table {
+    border: none;
+  }
+}
