@@ -11,30 +11,60 @@ export default function StaffFormPage() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async () => {
-    try{
-const res = await fetch('https://cyber-curate-backend-task-gyp7.onrender.com/staff/create', {
+// //   const handleSubmit = async () => {
+// //     try{
+// // const res = await fetch('https://cyber-curate-backend-task-gyp7.onrender.com/staff/create', {
+// //       method: 'POST',
+// //       headers: { 'Content-Type': 'application/json' },
+// //       body: JSON.stringify(formData),
+// //     });
+// //    let data= await res.json()
+// //    alert("sucessfully submitted")
+// //    console.log(data._id)
+// //    localStorage.setItem("id",data._id)
+// //     }
+// //     catch(error){
+// //       console.log(error.message)
+// //       alert(error.message)
+
+// //     }
+    
+//   //  if(id){
+//   //    localStorage.setItem('id',id)
+//   //    console.log(id)
+//   //  }
+  
+//   };
+const handleSubmit = async () => {
+  try {
+    const res = await fetch('https://cyber-curate-backend-task-gyp7.onrender.com/staff/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData), // Ensure formData is correct
     });
-   let data= await res.json()
-   alert("sucessfully submitted")
-   console.log(data._id)
-   localStorage.setItem("id",data._id)
-    }
-    catch(error){
-      console.log(error.message)
-      alert(error.message)
 
+    // Check if response is not ok (e.g., 400 or 500 status codes)
+    if (!res.ok) {
+      const errorText = await res.text(); // Get text response if it's not JSON
+      throw new Error(`Server Error: ${res.status} - ${errorText}`);
     }
-    
-  //  if(id){
-  //    localStorage.setItem('id',id)
-  //    console.log(id)
-  //  }
-  
-  };
+
+    // If response is OK, parse it as JSON
+    const data = await res.json();
+
+    // Show success message and log the data
+    alert("Successfully submitted");
+    console.log(data._id);
+
+    // Store the ID in localStorage
+    localStorage.setItem("id", data._id);
+  } catch (error) {
+    // Handle errors and show an alert with the error message
+    console.log(error.message);
+    alert(error.message);
+  }
+};
+
 
   return (
     <div>
