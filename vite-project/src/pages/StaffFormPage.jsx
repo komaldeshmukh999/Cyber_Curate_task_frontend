@@ -12,7 +12,7 @@ export default function StaffFormPage() {
   };
 
   const handleSubmit = async () => {
-    const res = await fetch('http://localhost:5000/api/staff/create', {
+    const res = await fetch('https://cyber-curate-backend-task-3.onrender.com/staff/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
