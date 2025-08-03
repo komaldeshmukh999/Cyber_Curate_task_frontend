@@ -12,14 +12,23 @@ export default function StaffFormPage() {
   };
 
   const handleSubmit = async () => {
-    const res = await fetch('https://cyber-curate-backend-task-3.onrender.com/staff/create', {
+    try{
+const res = await fetch(' https://cyber-curate-backend-task-gyp7.onrender.com/staff/create', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
    let data= await res.json()
+   alert("sucessfully submitted")
    console.log(data._id)
    localStorage.setItem("id",data._id)
+    }
+    catch(error){
+      console.log(error.message)
+      alert(error.message)
+
+    }
+    
   //  if(id){
   //    localStorage.setItem('id',id)
   //    console.log(id)

@@ -12,7 +12,8 @@ export default function ProfilePage() {
     let[obj,setObj]=useState({})
    useEffect(()=>async () => {
    
-    const res = await fetch('https://cyber-curate-backend-task-3.onrender.com/staff')
+    const res = await fetch('https://cyber-curate-backend-task-gyp7.onrender.com/staff')
+   
     const data = await res.json();
     setData(data)
     console.log(data)
